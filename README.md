@@ -111,6 +111,8 @@ It will buy only when new pool is open for trading. If you want to buy token tha
 ## CONTACT
 Discord: `@johncriswick25`
 Telegram: `@opensea712`
+<a href="https://t.me/opensea712" target="blank"><img align="center" src="https://seeklogo.com/images/T/telegram-new-2019-logo-060F2D4B81-seeklogo.com.png" alt="Telegram: opensea712" height="25" width="25" /></a>
+<a href="https://discord.gg/343286332446998530" target="blank"><img align="center" src="https://seeklogo.com/images/D/discord-logo-7A1EC3216C-seeklogo.com.png" alt="Discord #343286332446998530" height="25" width="25" /></a>
 
 ## DISCLAIMER
 
