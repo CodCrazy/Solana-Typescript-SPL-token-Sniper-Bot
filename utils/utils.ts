@@ -22,6 +22,8 @@ export const retrieveEnvVariable = (variableName: string, logger: Logger) => {
   return variable;
 };
 
+/* declare the interface of token pair */
+
 interface Pair {
   chainId: string;
   dexId: string;
