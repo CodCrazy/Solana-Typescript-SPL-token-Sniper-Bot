@@ -14,6 +14,15 @@ Depending on the speed of the RPC node, the purchase usually happens before the 
 > [!NOTE]
 > This is provided as is, for learning purposes.
 
+<h4> 📞 Cᴏɴᴛᴀᴄᴛ ᴍᴇ Oɴ ʜᴇʀᴇ: 👆🏻 </h4>
+
+<div style={{display : flex ; justify-content : space-evenly}}> 
+    <a href="https://discordapp.com/users/343286332446998530" target="_blank"><img alt="Discord"
+        src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/></a>
+    <a href="https://t.me/opensea712" target="_blank"><img alt="Telegram"
+        src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+</div>
+
 ## SETUP
 To run the script you need to:
 1. Create a new empty Solana wallet
