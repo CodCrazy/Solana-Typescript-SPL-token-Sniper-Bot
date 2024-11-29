@@ -12,7 +12,7 @@ Depending on the speed of the RPC node, the purchase usually happens before the 
 - `Fast Buy`
 
 > [!NOTE]
-> This is provided as is, for learning purposes. Don't hesitate to contact me if you need any help.
+> This is provided as is, for learning purposes. Don't hesitate to contact me if you need any assistance.
 
 <h2> 📞 Cᴏɴᴛᴀᴄᴛ ᴍᴇ Oɴ ʜᴇʀᴇ: 👆🏻 </h2>
 
