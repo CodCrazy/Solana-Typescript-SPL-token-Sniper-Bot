@@ -14,7 +14,7 @@ Depending on the speed of the RPC node, the purchase usually happens before the 
 > [!NOTE]
 > This is provided as is, for learning purposes. Don't hesitate to contact me if you need any assistance.
 
-<h2> 📞 Cᴏɴᴛᴀᴄᴛ ᴍᴇ Oɴ ʜᴇʀᴇ: 👆🏻 </h2>
+## 🙋‍♂️ Cᴏɴᴛᴀᴄᴛ ᴍᴇ Oɴ ʜᴇʀᴇ: 👋 ##
 
 <div style={{display : flex ; justify-content : space-evenly}}> 
     <a href="https://discordapp.com/users/343286332446998530" target="_blank"><img alt="Discord"
