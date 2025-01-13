@@ -25,27 +25,24 @@ import {
   TransactionMessage,
   VersionedTransaction,
   Commitment,
+  AccountInfo,
 } from '@solana/web3.js';
 import { getTokenAccounts, RAYDIUM_LIQUIDITY_PROGRAM_ID_V4, OPENBOOK_PROGRAM_ID, createPoolKeys } from './liquidity';
 import { retry } from './utils';
-import { retrieveEnvVariable, retrieveTokenValueByAddress} from './utils';
+import { retrieveEnvVariable, retrieveTokenValueByAddress } from './utils';
 import { getMinimalMarketV3, MinimalMarketLayoutV3 } from './market';
 import { MintLayout } from './types';
 import pino from 'pino';
 import bs58 from 'bs58';
 import * as fs from 'fs';
 import * as path from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = process.cwd();
 
 const transport = pino.transport({
   targets: [
-    // {
-    //   level: 'trace',
-    //   target: 'pino/file',
-    //   options: {
-    //     destination: 'buy.log',
-    //   },
-    // },
-
     {
       level: 'trace',
       target: 'pino-pretty',
@@ -276,12 +273,12 @@ async function buy(accountId: PublicKey, accountData: LiquidityStateV4): Promise
     transaction.sign([wallet, ...innerTransaction.signers]);
     const rawTransaction = transaction.serialize();
     const signature = await retry(
-    () =>
-      solanaConnection.sendRawTransaction(rawTransaction, {
-        skipPreflight: true,
-      }),
-    { retryIntervalMs: 10, retries: 50 }, // TODO handle retries more efficiently
-  );
+      () =>
+        solanaConnection.sendRawTransaction(rawTransaction, {
+          skipPreflight: true,
+        }),
+      { retryIntervalMs: 10, retries: 50 }, // TODO handle retries more efficiently
+    );
     logger.info({ mint: accountData.baseMint, signature }, `Sent buy tx`);
     const confirmation = await solanaConnection.confirmTransaction(
       {
@@ -378,7 +375,7 @@ async function sell(accountId: PublicKey, mint: PublicKey, amount: BigNumberish,
           createCloseAccountInstruction(tokenAccount.address, wallet.publicKey, wallet.publicKey),
         ],
       }).compileToV0Message();
-      
+
       const transaction = new VersionedTransaction(messageV0);
       transaction.sign([wallet, ...innerTransaction.signers]);
       const signature = await solanaConnection.sendRawTransaction(transaction.serialize(), {
@@ -460,7 +457,7 @@ const runListener = async () => {
   const runTimestamp = Math.floor(new Date().getTime() / 1000);
   const raydiumSubscriptionId = solanaConnection.onProgramAccountChange(
     RAYDIUM_LIQUIDITY_PROGRAM_ID_V4,
-    async (updatedAccountInfo) => {
+    async (updatedAccountInfo: KeyedAccountInfo) => {
       const key = updatedAccountInfo.accountId.toString();
       const poolState = LIQUIDITY_STATE_LAYOUT_V4.decode(updatedAccountInfo.accountInfo.data);
       const poolOpenTime = parseInt(poolState.poolOpenTime.toString());
@@ -497,7 +494,7 @@ const runListener = async () => {
 
   const openBookSubscriptionId = solanaConnection.onProgramAccountChange(
     OPENBOOK_PROGRAM_ID,
-    async (updatedAccountInfo) => {
+    async (updatedAccountInfo: { accountId: PublicKey; accountInfo: AccountInfo<Buffer> }) => {
       const key = updatedAccountInfo.accountId.toString();
       const existing = existingOpenBookMarkets.has(key);
       if (!existing) {
@@ -520,7 +517,7 @@ const runListener = async () => {
   if (AUTO_SELL) {
     const walletSubscriptionId = solanaConnection.onProgramAccountChange(
       TOKEN_PROGRAM_ID,
-      async (updatedAccountInfo) => {
+      async (updatedAccountInfo: { accountId: PublicKey; accountInfo: AccountInfo<Buffer> }) => {
         const accountData = AccountLayout.decode(updatedAccountInfo.accountInfo!.data);
         if (updatedAccountInfo.accountId.equals(quoteTokenAssociatedAddress)) {
           return;
@@ -532,7 +529,7 @@ const runListener = async () => {
           if (currValue) {
             logger.info(accountData.mint, `Current Price: ${currValue} SOL`);
             completed = await sell(updatedAccountInfo.accountId, accountData.mint, accountData.amount, currValue);
-          } 
+          }
         }
       },
       commitment,
