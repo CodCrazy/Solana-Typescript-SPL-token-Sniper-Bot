@@ -1,15 +1,26 @@
 ![](https://github.com/earthskyorg/Sol-Sniper-Bot/blob/main/readme/cryptomemesniperlogo.png)
 
-**Solana SPL Token Sniper Bot** that listens to new Raydium USDC or SOL pools and buys tokens for a fixed amount in USDC/SOL.
+# 🚀 Solana SPL Token Sniper Bot | Raydium Trading Bot | Auto Buy/Sell Bot
+
+**Advanced Solana Trading Bot** that listens to new Raydium USDC or SOL pools and buys tokens for a fixed amount in USDC/SOL.
 Depending on the speed of the RPC node, the purchase usually happens before the token is available on Raydium UI for swapping.
 
-- `WSOL Snipe`
-- `Auto-Sell`
-- `TP/SL`
-- `Min Liq`
-- `Burn/Lock Check`
-- `Renounce Check`
-- `Fast Buy`
+### 🔥 Key Features
+- `⚡ Fast WSOL/USDC Sniper`
+- `📈 Automated Trading`
+- `💰 Take Profit/Stop Loss`
+- `💧 Minimum Liquidity Check`
+- `🔒 Token Security (Burn/Lock Check)`
+- `✅ Ownership Renounce Check`
+- `🚄 High-Speed Execution`
+
+### 🎯 Popular Use Cases
+- Raydium Trading Bot
+- Solana Token Sniper
+- Auto Buy/Sell Bot
+- MEV Bot
+- Liquidity Sniper
+- New Token Launch Bot
 
 > [!NOTE]
 > This is provided as is, for learning purposes. Don't hesitate to contact me if you need any assistance.
