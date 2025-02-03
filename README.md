@@ -1,6 +1,6 @@
-![](https://github.com/earthskyorg/Sol-Sniper-Bot/blob/main/readme/cryptomemesniperlogo.png)
-
 # 🚀 Solana SPL Token Sniper Bot | Raydium Trading Bot | Auto Buy/Sell Bot
+
+![](https://github.com/earthskyorg/Sol-Sniper-Bot/blob/main/readme/cryptomemesniperlogo.png)
 
 **Advanced Solana Trading Bot** that listens to new Raydium USDC or SOL pools and buys tokens for a fixed amount in USDC/SOL.
 Depending on the speed of the RPC node, the purchase usually happens before the token is available on Raydium UI for swapping.
