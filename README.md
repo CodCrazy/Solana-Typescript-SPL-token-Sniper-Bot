@@ -1,4 +1,4 @@
-# 🚀 Solana SPL Token Sniper Bot | Raydium Trading Bot | Auto Buy/Sell Bot
+# 🚀 Solana SPL Token Sniper Bot | Raydium Trading Bot | Auto Buy / Sell Bot
 
 ![](https://github.com/earthskyorg/Sol-Sniper-Bot/blob/main/readme/cryptomemesniperlogo.png)
 
