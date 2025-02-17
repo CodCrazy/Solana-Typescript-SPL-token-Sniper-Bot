@@ -1,6 +1,6 @@
 {
   "name": "solana-sniper-bot",
-  "author": "SPLBOT",
+  "author": "earthskyorg",
   "scripts": {
     "buy": "ts-node buy.ts"
   },
